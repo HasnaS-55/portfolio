@@ -8,12 +8,14 @@ export default function About() {
         <div className="flex flex-col w-[95%] justify-start gap-5">
           <h2 className="text-3xl">About Me</h2>
           <p className="text-md text-[#757575]">
-            I’m Hasna, a full-stack developer with a front-end heartbeat. I
-            craft fast, accessible interfaces with HTML, CSS, and JavaScript,
-            then power them with the MERN stack or Python (Flask) + PostgreSQL.
-            I also build dynamic, high-performing WordPress sites. Curious and
-            hands-on, I turn ideas into polished, usable products that balance
-            design, performance, and scalability.
+            I’m Hasna, a full-stack developer with a front-end heartbeat. I craft fast, 
+            accessible, and visually compelling user interfaces with a strong foundation in HTML, CSS, and JavaScript.
+             On the back-end, I bring these interfaces to life using the MERN/ PERN stack (MongoDB/ Postgress, Express.js, React, Node.js) 
+             or robust Python frameworks like Flask paired with PostgreSQL. Beyond custom applications, 
+             I specialize in building dynamic, high-performing, and scalable WordPress sites. Driven by curiosity and a hands-on approach, 
+             I thrive on the entire journey—from initial concept to polished, deployable product. 
+             My goal is to build solutions that not only look exceptional but also deliver seamless performance, 
+             rock-solid scalability, and an outstanding user experience.
           </p>
         </div>
       </Reveal>

@@ -3,8 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { Reveal } from "./ScrollMotion";
 import { FiArrowUpRight, FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import {
-  SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs,
-  SiExpress, SiMongodb, SiPostgresql, SiTypescript,
+  SiReact, SiJavascript, SiTailwindcss, SiNodedotjs,
+  SiExpress, SiMongodb, SiPostgresql,
 } from "react-icons/si";
 
 /* -------- demo data (now with images[] and description) -------- */
@@ -14,48 +14,19 @@ const demoProjects = [
     title: "Booking with doctors",
     href: "https://github.com/HasnaS-55/Doctor_Booking_PERN",
     images: [
-      "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1526378568616-9b0a7c1e6e9e?q=80&w=1400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1534131707746-25d604851a1f?q=80&w=1400&auto=format&fit=crop",
+      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 11.34.51.png",
+      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 11.35.08.png",
+      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 11.37.26.png",
+      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 12.50.14.png",
+      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 12.49.59.png",
+      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 12.46.41.png",
+      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 12.50.40.png",
+      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 12.50.55.png",
+      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 12.51.14.png"
     ],
     description:
-      "Marketing landing built with Next.js, TypeScript, and Tailwind. Sections include hero, features, pricing, and signup.",
-    tech: [SiNextdotjs, SiTailwindcss, SiTypescript],
-  },
-  {
-    id: "files-app",
-    title: "TerraVault – Files App",
-    href: "https://example.com/terravault",
-    images: [
-      "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=1400&auto=format&fit=crop",
-    ],
-    description:
-      "Cloud files UI with previews, drag & drop uploads, and sharing links. React + Tailwind + Node API.",
-    tech: [SiReact, SiTailwindcss, SiNodedotjs],
-  },
-  {
-    id: "api-service",
-    title: "User Service (API)",
-    href: "https://example.com/user-service",
-    images: [
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&auto=format&fit=crop",
-    ],
-    description:
-      "REST API for auth/profile with Express and PostgreSQL. JWT, role-based access, and OpenAPI docs.",
-    tech: [SiNodedotjs, SiExpress, SiPostgresql],
-  },
-  {
-    id: "blog-platform",
-    title: "Blog Platform",
-    href: "https://example.com/blog",
-    images: [
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1400&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=1400&auto=format&fit=crop",
-    ],
-    description:
-      "Full-stack blog with MDX, comments, and search. React + Tailwind, MongoDB backend.",
-    tech: [SiReact, SiTailwindcss, SiMongodb],
+      "A minimal full-stack app where patients search & book doctors, and doctors manage profiles, availability, and appointments. Built with React + Vite + Redux, Express, and PostgreSQL (Neon). Tailwind UI with an animated pill-navigation and responsive hero.",
+    tech: [SiReact, SiTailwindcss, SiExpress, SiPostgresql, SiJavascript, SiNodedotjs],
   },
 ];
 

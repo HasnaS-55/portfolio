@@ -9,13 +9,13 @@ export default function Connect() {
             </div>
             <div className="flex flex-col w-[95%] justify-start gap-3">
                 <h6 className="justify-start text-1xl">That's all for now.</h6>
-                <h2 className="justify-start text-6xl">Got a project in mind?</h2>
-                <h2 className="justify-start text-6xl">Let’s talk</h2>
+                <h2 className="justify-start text-5xl lg:text-6xl">Got a project in mind?</h2>
+                <h2 className="justify-start text-5xl lg:text-6xl">Let’s talk</h2>
 
             </div>
             <div className="flex h-55 relative w-[95%] justify-center items-center ">
                 <div className="flex w-full h-1 bg-[#141414]"></div>
-                <button className="h-55 w-55 text-[#F7F7F7] text-xl absolute top-0 right-20  z-10 bg-[#141414] rounded-full">Click Here</button>
+                <button className="h-45 w-45 text-[#F7F7F7] text-xl absolute  right-20  z-10 bg-[#141414] rounded-full lg:w-55 lg:h-55">Click Here</button>
 
             </div>
             <div className="flex w-[95%] justify-start items-center gap-10">

@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import {
   SiHtml5,
   SiJavascript,
-  SiTypescript,
   SiGithub,
   SiNodedotjs,
   SiExpress,
