@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FiArrowUpRight, FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import {
   SiReact, SiJavascript, SiTailwindcss, SiNodedotjs,
-  SiExpress, SiPostgresql,
+  SiExpress, SiPostgresql, SiRedux
 } from "react-icons/si";
 import img1 from "/src/assets/projects-images/project1/screenshot1.png"
 import img2 from "/src/assets/projects-images/project1/screenshot2.png"
@@ -26,7 +26,7 @@ const demoProjects = [
     ],
     description:
       "A minimal full-stack app where patients search & book doctors, and doctors manage profiles, availability, and appointments. Built with React + Vite + Redux, Express, and PostgreSQL (Neon). Tailwind UI with an animated pill-navigation and responsive hero.",
-    tech: [SiReact, SiTailwindcss, SiExpress, SiPostgresql, SiJavascript, SiNodedotjs],
+    tech: [SiReact, SiTailwindcss, SiExpress, SiPostgresql, SiJavascript, SiNodedotjs, SiRedux],
   },
 ];
 
