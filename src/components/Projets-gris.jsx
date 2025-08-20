@@ -14,15 +14,15 @@ const demoProjects = [
     title: "Booking with doctors",
     href: "https://github.com/HasnaS-55/Doctor_Booking_PERN",
     images: [
-      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 11.34.51.png",
-      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 11.35.08.png",
-      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 11.37.26.png",
-      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 12.50.14.png",
-      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 12.49.59.png",
-      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 12.46.41.png",
-      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 12.50.40.png",
-      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 12.50.55.png",
-      "/src/assets/projects-images/project1/Screenshot 2025-08-19 at 12.51.14.png"
+      "/src/assets/projects-images/project1/screenshot1.png",
+      "/src/assets/projects-images/project1/screenshot2.png",
+      "/src/assets/projects-images/project1/screenshot3.png",
+      "/src/assets/projects-images/project1/screenshot4.png",
+      "/src/assets/projects-images/project1/screenshot5.png",
+      "/src/assets/projects-images/project1/screenshot6.png",
+      "/src/assets/projects-images/project1/screenshot7.png",
+      "/src/assets/projects-images/project1/screenshot8.png",
+      "/src/assets/projects-images/project1/screenshot9.png"
     ],
     description:
       "A minimal full-stack app where patients search & book doctors, and doctors manage profiles, availability, and appointments. Built with React + Vite + Redux, Express, and PostgreSQL (Neon). Tailwind UI with an animated pill-navigation and responsive hero.",
