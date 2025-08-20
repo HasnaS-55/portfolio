@@ -35,7 +35,7 @@ export default function Hero() {
               </svg>
             </div>
           </a>
-          <div className="w-[45%] text-right text-[#F4F4F4] text-sm lg:text-2xl">
+          <div className="w-[50%] text-right text-[#F4F4F4] text-sm lg:text-lg lg:w-[40%]">
             <p>
               Passionate Full-Stack Developer, dedicated to engineering
               innovative solutions and I bridge elegant design with robust
