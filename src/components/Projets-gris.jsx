@@ -1,55 +1,69 @@
-
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useRef, useState } from "react";
 import { Reveal } from "./ScrollMotion";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight, FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import {
-  SiReact,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiNodedotjs,
-  SiExpress,
-  SiMongodb,
-  SiPostgresql,
-  SiTypescript,
+  SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs,
+  SiExpress, SiMongodb, SiPostgresql, SiTypescript,
 } from "react-icons/si";
 
-
+/* -------- demo data (now with images[] and description) -------- */
 const demoProjects = [
   {
-    id: "learnlogicify-landing",
-    title: "Learnlogicify Landing Page",
-    href: "https://example.com/learnlogicify",
-    img: "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1200&auto=format&fit=crop",
+    id: "Doc-Appointement",
+    title: "Booking with doctors",
+    href: "https://github.com/HasnaS-55/Doctor_Booking_PERN",
+    images: [
+      "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1526378568616-9b0a7c1e6e9e?q=80&w=1400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1534131707746-25d604851a1f?q=80&w=1400&auto=format&fit=crop",
+    ],
+    description:
+      "Marketing landing built with Next.js, TypeScript, and Tailwind. Sections include hero, features, pricing, and signup.",
     tech: [SiNextdotjs, SiTailwindcss, SiTypescript],
   },
   {
     id: "files-app",
     title: "TerraVault – Files App",
     href: "https://example.com/terravault",
-    img: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=1400&auto=format&fit=crop",
+    ],
+    description:
+      "Cloud files UI with previews, drag & drop uploads, and sharing links. React + Tailwind + Node API.",
     tech: [SiReact, SiTailwindcss, SiNodedotjs],
   },
   {
     id: "api-service",
     title: "User Service (API)",
     href: "https://example.com/user-service",
-    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&auto=format&fit=crop",
+    ],
+    description:
+      "REST API for auth/profile with Express and PostgreSQL. JWT, role-based access, and OpenAPI docs.",
     tech: [SiNodedotjs, SiExpress, SiPostgresql],
   },
   {
     id: "blog-platform",
     title: "Blog Platform",
     href: "https://example.com/blog",
-    img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=1400&auto=format&fit=crop",
+    ],
+    description:
+      "Full-stack blog with MDX, comments, and search. React + Tailwind, MongoDB backend.",
     tech: [SiReact, SiTailwindcss, SiMongodb],
   },
 ];
 
-
+/* -------- UI bits -------- */
 const TechPill = ({ tech = [] }) => (
   <div className="w-full absolute top-3 left-3 flex items-center gap-2 rounded-xl bg-white/95 px-3 py-2 shadow-md backdrop-blur">
     {tech.map((Icon, i) => (
-      <Icon key={i} className="h-6 w-6 #141414" aria-hidden />
+      <Icon key={i} className="h-6 w-6 text-[#141414]" aria-hidden />
     ))}
   </div>
 );
@@ -67,12 +81,121 @@ const ArrowLink = ({ href }) => (
   </a>
 );
 
-const ProjectCard = ({ project }) => (
-  <div className="group">
+/* -------- Modal with carousel -------- */
+function ProjectModal({ project, onClose }) {
+  const images = project?.images?.length ? project.images : [project?.img].filter(Boolean);
+  const [i, setI] = useState(0);
+  const next = () => setI((p) => (p + 1) % images.length);
+  const prev = () => setI((p) => (p - 1 + images.length) % images.length);
+  const dialogRef = useRef(null);
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, []);
+
+  if (!project) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-[999] bg-black/60 backdrop-blur-sm grid place-items-center p-4"
+      onClick={onClose}
+      aria-modal="true"
+      role="dialog"
+      aria-labelledby="proj-title"
+    >
+      <div
+        ref={dialogRef}
+        className="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between px-5 py-4 border-b">
+          <h2 id="proj-title" className="text-xl md:text-2xl font-semibold text-zinc-900">
+            {project.title}
+          </h2>
+          <button
+            onClick={onClose}
+            className="p-2 rounded-full hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-300"
+            aria-label="Close"
+          >
+            <FiX className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Carousel */}
+        <div className="relative">
+          <div className="aspect-[16/10] w-full overflow-hidden bg-zinc-100">
+            <img
+              key={i}
+              src={images[i]}
+              alt={`${project.title} ${i + 1}`}
+              className="h-full w-full object-cover"
+              loading="eager"
+            />
+          </div>
+
+          {images.length > 1 && (
+            <>
+              <button
+                onClick={prev}
+                className="absolute left-3 top-1/2 -translate-y-1/2 grid place-items-center rounded-full bg-white/90 hover:bg-white shadow-md size-10"
+                aria-label="Previous image"
+              >
+                <FiChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={next}
+                className="absolute right-3 top-1/2 -translate-y-1/2 grid place-items-center rounded-full bg-white/90 hover:bg-white shadow-md size-10"
+                aria-label="Next image"
+              >
+                <FiChevronRight className="w-6 h-6" />
+              </button>
+
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                {images.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setI(idx)}
+                    className={`h-2.5 rounded-full transition-all ${
+                      i === idx ? "w-6 bg-white" : "w-2.5 bg-white/60 hover:bg-white"
+                    }`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+
+        {/* Body */}
+        <div className="p-5 space-y-4">
+          <p className="text-zinc-700 leading-relaxed">{project.description}</p>
+          <div className="flex items-center gap-2">
+            {project.tech?.map((Icon, k) => (
+              <span key={k} className="inline-flex size-9 items-center justify-center rounded-full bg-zinc-100">
+                <Icon className="w-5 h-5 text-zinc-800" />
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* -------- Card -------- */
+const ProjectCard = ({ project, onOpen }) => (
+  <div className="group cursor-pointer" onClick={() => onOpen(project)}>
     <Reveal className="rounded-[18px]">
       <div className="relative overflow-hidden rounded-[16px] aspect-[16/10]">
         <img
-          src={project.img}
+          src={project.images?.[0] || project.img}
           alt={project.title}
           className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
           loading="lazy"
@@ -83,21 +206,32 @@ const ProjectCard = ({ project }) => (
     </Reveal>
 
     <div className="mt-4 flex items-center gap-3">
-      <ArrowLink href={project.href} />
-      <h3 className="text-2xl font-medium leading-tight #141414">
+      {/* stop propagation so arrow still opens external link */}
+      <div onClick={(e) => e.stopPropagation()}>
+        <ArrowLink href={project.href} />
+      </div>
+      <h3 className="text-2xl font-medium leading-tight text-[#141414]">
         {project.title}
       </h3>
     </div>
   </div>
 );
 
-/* ---------- grid ---------- */
+/* -------- Grid + modal state -------- */
 export default function ProjectsGrid({ items = demoProjects, className = "" }) {
+  const [open, setOpen] = useState(null); // holds the selected project object or null
+  const openModal = (p) => setOpen(p);
+  const closeModal = () => setOpen(null);
+
   return (
-    <section className={`w-[95%] pb-10 grid gap-10 sm:grid-cols-2 xl:grid-cols-2 ${className}`}>
-      {items.map((p) => (
-        <ProjectCard key={p.id} project={p} />
-      ))}
-    </section>
+    <>
+      <section className={`w-[95%] pb-10 grid gap-10 sm:grid-cols-2 xl:grid-cols-2 ${className}`}>
+        {items.map((p) => (
+          <ProjectCard key={p.id} project={p} onOpen={openModal} />
+        ))}
+      </section>
+
+      {open && <ProjectModal project={open} onClose={closeModal} />}
+    </>
   );
 }
