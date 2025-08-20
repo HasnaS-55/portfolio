@@ -1,6 +1,9 @@
 import { ScrollVelocity } from "./Text-carousel";
 import NavBar from "./NavBar";
 export default function Hero() {
+  const redirectToGithub = () => {
+    window.open('https://github.com/HasnaS-55', '_blank', 'noopener,noreferrer')
+  }
   return (
     <>
       <section className="min-h-screen w-full flex flex-col relative bg-[url('/src/assets/image.png')] bg-cover bg-center items-center justify-end">
@@ -42,7 +45,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="w-full flex flex-col justify-center items-center gap-26">
-          <div className="w-[95%] flex justify-center pl-150">
+          <div onClick={redirectToGithub} className="w-[95%] flex justify-center pl-150">
             <svg
               width="121"
               height="121"

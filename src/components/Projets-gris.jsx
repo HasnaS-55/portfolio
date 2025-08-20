@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef, useState } from "react";
 import { FiArrowUpRight, FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import {
