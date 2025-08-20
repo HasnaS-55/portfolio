@@ -5,7 +5,7 @@ import {
   SiReact, SiJavascript, SiTailwindcss, SiNodedotjs,
   SiExpress, SiPostgresql,
 } from "react-icons/si";
-import img1 from "../assets/projects-images/project1/screenshot1.png"
+import img1 from "/src/assets/projects-images/project1/screenshot1.png"
 
 
 const demoProjects = [
