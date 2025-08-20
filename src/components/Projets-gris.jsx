@@ -1,11 +1,11 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef, useState } from "react";
 import { Reveal } from "./ScrollMotion";
 import { FiArrowUpRight, FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import {
   SiReact, SiJavascript, SiTailwindcss, SiNodedotjs,
-  SiExpress, SiMongodb, SiPostgresql,
+  SiExpress, SiPostgresql,
 } from "react-icons/si";
+import img1 from "../assets/projects-images/project1/screenshot1.png"
 
 
 const demoProjects = [
@@ -14,7 +14,7 @@ const demoProjects = [
     title: "Booking with doctors",
     href: "https://github.com/HasnaS-55/Doctor_Booking_PERN",
     images: [
-      "/src/assets/projects-images/project1/screenshot1.png",
+      img1,
       "/src/assets/projects-images/project1/screenshot2.png",
       "/src/assets/projects-images/project1/screenshot3.png",
       "/src/assets/projects-images/project1/screenshot4.png",
