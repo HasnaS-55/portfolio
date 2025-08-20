@@ -14,7 +14,7 @@ const demoProjects = [
     title: "Booking with doctors",
     href: "https://github.com/HasnaS-55/Doctor_Booking_PERN",
     images: [
-      "/projects-images/project1/screenshot1.png",
+      "/src/assets/projects-images/project1/screenshot1.png",
       "/src/assets/projects-images/project1/screenshot2.png",
       "/src/assets/projects-images/project1/screenshot3.png",
       "/src/assets/projects-images/project1/screenshot4.png",
