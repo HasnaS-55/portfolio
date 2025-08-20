@@ -6,7 +6,7 @@ export default function Hero() {
       <section className="min-h-screen w-full flex flex-col relative bg-[url('/src/assets/image.png')] bg-cover bg-center items-center justify-end">
         <div className=" w-[95%] flex items-start justify-between absolute top-8  z-10">
           <a
-            href="https://www.linkedin.com/in/hasna-salihi-78b307367/"
+            href="https://www.linkedin.com/in/hasna-salihi-78b307367"
             target="_blank"
             rel="noopener noreferrer"
           >
