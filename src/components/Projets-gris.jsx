@@ -22,7 +22,7 @@ const demoProjects = [
     title: "Booking with doctors",
     href: "https://github.com/HasnaS-55/Doctor_Booking_PERN",
     images: [
-      img1, img2, img3, img4, img5, img6, img7, img8, img9
+      img1, img2, img3, img4, img5, img6, img7, img8, img9,
     ],
     description:
       "A minimal full-stack app where patients search & book doctors, and doctors manage profiles, availability, and appointments. Built with React + Vite + Redux, Express, and PostgreSQL (Neon). Tailwind UI with an animated pill-navigation and responsive hero.",
