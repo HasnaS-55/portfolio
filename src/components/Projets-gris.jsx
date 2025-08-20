@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Reveal } from "./ScrollMotion";
 import { FiArrowUpRight, FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import {
   SiReact, SiJavascript, SiTailwindcss, SiNodedotjs,
@@ -163,7 +162,7 @@ function ProjectModal({ project, onClose }) {
 
 const ProjectCard = ({ project, onOpen }) => (
   <div className="group cursor-pointer" onClick={() => onOpen(project)}>
-    <Reveal className="rounded-[18px]">
+    <div className="rounded-[18px]">
       <div className="relative overflow-hidden rounded-[16px] aspect-[16/10]">
         <img
           src={project.images?.[0] || project.img}
@@ -174,7 +173,7 @@ const ProjectCard = ({ project, onOpen }) => (
         />
         <TechPill tech={project.tech} />
       </div>
-    </Reveal>
+    </div>
 
     <div className="mt-4 flex items-center gap-3">
       
