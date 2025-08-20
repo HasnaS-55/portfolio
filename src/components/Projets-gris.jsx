@@ -6,6 +6,14 @@ import {
   SiExpress, SiPostgresql,
 } from "react-icons/si";
 import img1 from "/src/assets/projects-images/project1/screenshot1.png"
+import img2 from "/src/assets/projects-images/project1/screenshot2.png"
+import img3 from "/src/assets/projects-images/project1/screenshot3.png"
+import img4 from "/src/assets/projects-images/project1/screenshot4.png"
+import img5 from "/src/assets/projects-images/project1/screenshot5.png"
+import img6 from "/src/assets/projects-images/project1/screenshot6.png"
+import img7 from "/src/assets/projects-images/project1/screenshot7.png"
+import img8 from "/src/assets/projects-images/project1/screenshot8.png"
+import img9 from "/src/assets/projects-images/project1/screenshot9.png"
 
 
 const demoProjects = [
@@ -14,15 +22,7 @@ const demoProjects = [
     title: "Booking with doctors",
     href: "https://github.com/HasnaS-55/Doctor_Booking_PERN",
     images: [
-      img1,
-      "/src/assets/projects-images/project1/screenshot2.png",
-      "/src/assets/projects-images/project1/screenshot3.png",
-      "/src/assets/projects-images/project1/screenshot4.png",
-      "/src/assets/projects-images/project1/screenshot5.png",
-      "/src/assets/projects-images/project1/screenshot6.png",
-      "/src/assets/projects-images/project1/screenshot7.png",
-      "/src/assets/projects-images/project1/screenshot8.png",
-      "/src/assets/projects-images/project1/screenshot9.png"
+      img1, img2, img3, img4, img5, img6, img7, img8, img9
     ],
     description:
       "A minimal full-stack app where patients search & book doctors, and doctors manage profiles, availability, and appointments. Built with React + Vite + Redux, Express, and PostgreSQL (Neon). Tailwind UI with an animated pill-navigation and responsive hero.",
