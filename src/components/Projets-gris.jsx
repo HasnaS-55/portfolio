@@ -7,7 +7,7 @@ import {
   SiExpress, SiMongodb, SiPostgresql,
 } from "react-icons/si";
 
-/* -------- demo data (now with images[] and description) -------- */
+
 const demoProjects = [
   {
     id: "Doc-Appointement",
@@ -30,7 +30,7 @@ const demoProjects = [
   },
 ];
 
-/* -------- UI bits -------- */
+
 const TechPill = ({ tech = [] }) => (
   <div className="w-full absolute top-3 left-3 flex items-center gap-2 rounded-xl bg-white/95 px-3 py-2 shadow-md backdrop-blur">
     {tech.map((Icon, i) => (
@@ -52,7 +52,7 @@ const ArrowLink = ({ href }) => (
   </a>
 );
 
-/* -------- Modal with carousel -------- */
+
 function ProjectModal({ project, onClose }) {
   const images = project?.images?.length ? project.images : [project?.img].filter(Boolean);
   const [i, setI] = useState(0);
@@ -85,7 +85,7 @@ function ProjectModal({ project, onClose }) {
         className="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
+       
         <div className="flex items-center justify-between px-5 py-4 border-b">
           <h2 id="proj-title" className="text-xl md:text-2xl font-semibold text-zinc-900">
             {project.title}
@@ -99,7 +99,7 @@ function ProjectModal({ project, onClose }) {
           </button>
         </div>
 
-        {/* Carousel */}
+        
         <div className="relative">
           <div className="aspect-[16/10] w-full overflow-hidden bg-zinc-100">
             <img
@@ -144,7 +144,7 @@ function ProjectModal({ project, onClose }) {
           )}
         </div>
 
-        {/* Body */}
+        
         <div className="p-5 space-y-4">
           <p className="text-zinc-700 leading-relaxed">{project.description}</p>
           <div className="flex items-center gap-2">
@@ -160,7 +160,7 @@ function ProjectModal({ project, onClose }) {
   );
 }
 
-/* -------- Card -------- */
+
 const ProjectCard = ({ project, onOpen }) => (
   <div className="group cursor-pointer" onClick={() => onOpen(project)}>
     <Reveal className="rounded-[18px]">
@@ -177,7 +177,7 @@ const ProjectCard = ({ project, onOpen }) => (
     </Reveal>
 
     <div className="mt-4 flex items-center gap-3">
-      {/* stop propagation so arrow still opens external link */}
+      
       <div onClick={(e) => e.stopPropagation()}>
         <ArrowLink href={project.href} />
       </div>
@@ -188,9 +188,9 @@ const ProjectCard = ({ project, onOpen }) => (
   </div>
 );
 
-/* -------- Grid + modal state -------- */
+
 export default function ProjectsGrid({ items = demoProjects, className = "" }) {
-  const [open, setOpen] = useState(null); // holds the selected project object or null
+  const [open, setOpen] = useState(null); 
   const openModal = (p) => setOpen(p);
   const closeModal = () => setOpen(null);
 
